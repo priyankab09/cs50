@@ -1,0 +1,77 @@
+﻿{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+<h3 class="page-hdr">Profile - {{ profile_info.username }}</h3>
+<div id="posts-view">
+    <div id="posts">
+        <h5>
+            Followers : <span id="follower_count">{{ profile_info.follower_count}}</span>
+            &nbsp;&nbsp;
+            Following : <span id="following_count">{{ profile_info.following_count}}</span>
+        </h5>
+
+        {% include "network/postsview.html" %}
+        {% if user.is_authenticated  and not profile_info.own_profile %}
+        <button class="btn btn-primary" style="margin-bottom:80px;" id="following_status">
+            {% if profile_info.is_following %}
+            Unfollow
+            {% else %}
+            Follow
+            {% endif %}
+        </button>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+    
+    //Set Edit post - Click Event Listener
+    SetEditPostClickEventListener();
+
+    // attach function to follow/unfollow (toggle) for logged in user
+    let el_status = document.querySelector('#following_status')
+    let el_following = document.querySelector('#following_count')
+    let el_follower = document.querySelector('#follower_count')
+
+    // we get the user id from the url
+    el_status.addEventListener('click', () => change_following_status(el_status.textContent.trim(),
+        document.location.href.substring(document.location.href.lastIndexOf('/') + 1),
+        el_status, el_follower, el_following));
+
+    function change_following_status(statusValue, userid, el_status_text,
+        el_follower_count, el_following_count) {
+
+        let msgBody = '';
+        let newButtonTextOnSuccess = '';
+        if (statusValue === 'Follow') {
+            msgBody = JSON.stringify({ new_status: 'follow' });
+            newButtonTextOnSuccess = 'Unfollow'
+        } else if (statusValue === 'Unfollow') {
+            msgBody = JSON.stringify({ new_status: 'unfollow' });
+            newButtonTextOnSuccess = 'Follow'
+        } else { throw Error('Bad data when calling change_following_status') }
+
+        fetch('/change_following_status/' + userid, {
+            method: 'POST',
+            body: msgBody
+        })
+            .then(handleErrors)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // change button text
+                el_status_text.textContent = newButtonTextOnSuccess;
+                el_follower_count.textContent = data.followers;
+                el_following_count.textContent = data.following;
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            });
+    }
+</script>
+{% endblock %}

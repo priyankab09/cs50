@@ -1,0 +1,32 @@
+﻿<div id="posts-view">
+    <div id="posts">
+        {% for post in page_obj %}
+        <div class="post">
+            <a href="{% url 'profile'  post.user.id %}">{{ post.user.username }}</a><br>
+            <div name="post_read_view">
+                <span class="content">{{ post.content }}</span>
+                {% if user.is_authenticated and user.id == post.user.id %}
+                <span class="content_edit"></span>
+                <div>
+                    <button name="edit_post" class="btn btn-link edit_post" data-pid="{{post.id}}">Edit</button>
+                </div>
+                {% endif %}
+            </div>
+            <span class="created_at">{{ post.created_at }}</span><br>
+            <i class="fa fa-heart like_toggle"  name ="like_icon" data-pid="{{post.id}}" style="color:orangered"></i> <span class="likes_count">{{ post.likes_count }}</span><br>
+        </div>
+        {% endfor %}
+    </div>
+    <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+             {% endif %}
+
+            <li class="page-item" style="display: inline-flex; align-items: center;">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </li>
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+            {% endif %}
+    </ul>
+</div>

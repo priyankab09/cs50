@@ -1,0 +1,69 @@
+textarea {
+    min-height: 400px;
+}
+
+.email_row {
+    width:100%;
+    border:1px solid black;
+}
+
+.email_row > .sender {
+    width:25%;
+    display:inline-block;
+    padding:3px;
+}
+
+.email_row > .subject {
+    width: 55%;
+    display: inline-block;
+    padding: 3px;
+}
+
+.email_row > .timestamp {
+    width: 20%;
+    display: inline-block;
+    padding: 3px;
+}
+
+
+.email-row {
+    width: 100%;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.email-row:hover {
+    border-color:black;
+    background-color:lightgrey;
+}
+
+.email-row > .email-sender {
+    width: 25%;
+    display: inline-block;
+    padding: 3px;
+}
+
+.email-row > .email-subject {
+    width: 55%;
+    display: inline-block;
+    padding: 3px;
+}
+
+.email-row > .email-timestamp {
+    width: 20%;
+    display: inline-block;
+    padding: 3px;
+}
+
+.email-read {
+    background-color:#e0dfdf;
+}
+
+#message {
+    color:red;
+}
+
+#reply-button-container, #archive-button-container {
+    margin: 10px 10px 10px 0px;
+    display:inline-block!important;
+}

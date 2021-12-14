@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        .img_srch_logo_wrapper {
+            max-height: 92px;
+            position: relative;
+        }
+
+        .img_srch_logo_text {
+            color: #4285f4;
+            font: 16px/16px roboto-regular, arial, sans-serif;
+            position: absolute;
+            left: 215px;
+            bottom: 0;
+            white-space: nowrap
+        }
+
+
+    </style>
+
+</head>
+   <body>
+	   <div class="centerContent">
+           <div style="text-align:right; padding: 20px 20px; top:16px;">
+               <a class=resources href="search.html" target="_top">Search</a>
+               <a class=resources href="advanced_search.html" target="_top">Advanced Search</a>
+           </div>
+		   <!-- style="margin:0 auto; width:50%;-->
+		   <div class="centerContent">
+			  <div class="centerContent">
+                  <div id=logo>
+                      <div class="img_srch_logo_wrapper">
+                          <img alt="Google" height="92" src="http://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" srcset="http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png 1x, http://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png 2x" width="272" data-atf="1">
+                          <span class="img_srch_logo_text">images</span>
+                      </div>
+                  </div>
+			  <div id=inputWrapper class=searchbox>
+				 <form align="center" action="https://google.com/search" method="get">
+					<input class="searchtext" type="search" autocomplete="on" spellcheck="false" role="combobox"
+					   placeholder="" aria-live="polite" name="q">
+                    <span id="buttons">
+                        <input name="tbm" value="isch" type="hidden">
+                        <input type="submit" name="btnS" class="srch_button" id="button1" value="Google Image Search">
+                    </span>
+				 </form>
+			  </div>
+			</div>
+		   </div>
+	    </div>
+</body>
+</html>
+	  
+	  
+	  
+		

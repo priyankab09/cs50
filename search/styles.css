@@ -1,0 +1,105 @@
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
+
+/* Search */
+
+.centerContent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+a.resources {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0px 5px;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    text-decoration-color: rgba(0,0,0,0.87);
+}
+
+    a.resources:hover {
+        text-decoration: underline;
+    }
+
+
+.searchtext {
+    background-color: var(--search-box-bg, white);
+    border: none;
+    border-radius: calc(0.5 * var(--ntp-realbox-height));
+    color: var(--search-box-text);
+    font-family: inherit;
+    font-size: inherit;
+    height: 100%;
+    outline: none;
+    padding-left: 52px;
+    padding-right: 44px;
+    position: relative;
+    width: 540px;
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+
+* {
+    font-family: Helvetica, Arial;
+}
+
+
+.srch_button {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 30px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    background-color: #f8f9fa;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #dfe1e5;
+    max-width: 584px;
+    box-shadow: none;
+    border-radius: 24px;
+    height: 44px;
+    margin: 0 auto;
+    background-color: var(--search-box-bg, white);
+    border-radius: calc(0.5 * var(--ntp-realbox-height));
+    --ntp-realbox-height: 44px;
+    font-size: 16px;
+    height: var(--ntp-realbox-height);
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    width: 561px;
+    margin: auto;
+    margin-top: 0px;
+    width: 100%;
+    text-align: left;
+    z-index: 3;
+    cursor: default;
+    -webkit-user-select: none;
+}
+
+
+#logo {
+    margin: auto;
+    margin-top: 50px;
+    min-height: 150px;
+    max-height: 290px;
+    height: calc(100% - 560px);
+}
+

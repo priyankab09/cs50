@@ -1,0 +1,26 @@
+﻿ {% for listing_info in listings_info %}
+<div name="active_listing" class="item_container d-flex flex-row bd-highlight mb-2">
+    <div class="img_container p-2 bd-highlight">
+        <a href="{% url 'listing' listing_info.listing.id %}">
+            <img class="ximg-thumbnail img_small" src="{{ listing_info.listing.photo_url }}" />
+        </a>
+    </div>
+    <div class="item_info p-4 bd-highlight">
+        <div>
+            <div class="item_title">
+                <a href="{% url 'listing' listing_info.listing.id %}">{{ listing_info.listing.title }}</a>
+            </div>
+            <div class="item_price">
+                <label>Price: $</label>{{ listing_info.current_price|floatformat:2 }}
+                <label class="bid_count">[ {{ listing_info.bid_count }} bids ]</label>
+            </div>
+            <div class="item_description">
+                {{ listing_info.listing.description }}
+            </div>
+            <div class="item_created_at mt-2">
+                Created at: {{ listing_info.listing.created_at }}<br />
+            </div>
+        </div>
+    </div>
+</div>
+    {% endfor %}

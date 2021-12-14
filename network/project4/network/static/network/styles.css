@@ -1,0 +1,36 @@
+.page-hdr {
+    margin-top:15px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#posts, #new-post {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 15px;
+    background-color:#efefef;
+    padding:10px;
+}
+
+.post a, .post span {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.pagination {
+    margin:30px;
+}
+
+.pagination > a {
+    display:inline-block;
+    margin-right: 10px;
+}
+
+.like_toggle {
+    cursor: pointer;
+}

@@ -1,0 +1,35 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+<h3 class="page-hdr">All Posts</h3>
+<div id="new-post">
+
+    <h6>New Post</h6>
+    <form id="post-form">
+        <textarea class="form-control" rows="3" id="post-content" maxlength="256" placeholder="Your message here"></textarea><br />
+        <input id="submit-button" class="btn btn-primary" type="submit"  value="Post" disabled>
+    </form>
+</div>
+{% include "network/postsview.html" %}
+{% csrf_token %}
+
+{% endblock %}
+
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        //New Post Form - Submit Listener
+        document.querySelector('#post-form').addEventListener('submit', post_content);
+
+        const elText = document.querySelector('#post-content');
+        const elButton = document.querySelector('#submit-button')
+        elText.addEventListener('keyup', function () { can_post(elText, elButton); });
+
+        //Edit post - Click Event Listener
+        SetEditPostClickEventListener();
+
+    });
+
+</script>
+{% endblock %}

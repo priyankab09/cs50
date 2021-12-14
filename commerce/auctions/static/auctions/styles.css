@@ -1,0 +1,111 @@
+body {
+    padding: 10px;
+}
+
+#img_container 
+.listing-btns
+{
+  font-size:9pt;  
+}
+
+.item_container {
+    border:1px solid #b4bdb1;
+    margin:;
+    padding: 20px;
+    xobject-fit:contain;
+}
+
+.img_large {
+    border: 0px solid black;
+    object-fit: contain;
+    width: 350px;
+    height: 350px;
+}
+
+/* Classes for items in active listings, watchlist or by category */
+
+.img_small {
+    object-fit: contain;
+    width: 150px;
+    height: 150px;
+}
+
+.img_container {
+    border: 1px solid #d8eaeb;
+    position:relative;
+    float: left;
+    display: inline-block;
+}
+
+.item_info {
+    width:100%;
+    display:inline-block;
+    position: relative;
+    float: right;
+    clear:right;
+}
+
+.item_title {
+    font-size:14pt;
+    font-weight:500;
+}
+
+.item_price {
+    font-size: 15pt;
+    font-weight: 800;
+}
+
+.item_price label {
+    font-size:12pt;
+    font-weight:500;
+}
+
+.item_description {
+    font-size: 11pt;
+    font-weight: 300;
+    color:#111111;
+}
+
+.item_created_at {
+    font-size: 10pt;
+    font-weight: 200;
+    color:#4d4b4b;
+}
+
+.bid_count {
+    color:#1488bb;
+    font-size:10pt;
+    font-weight:400;
+    margin-left:10px;
+}
+/* Listing page */
+.price_info {
+    background-color: #e9e9e9; 
+    width:100%;
+    border: 1px solid #888888;
+    font-size:14pt;
+}
+
+.listed_by  {
+    font-size: 9pt;
+    font-weight: 400;
+}
+
+.created_by {
+    font-size: 9pt;
+    font-weight: 400;
+    margin-top:-8px;
+}
+/* create listing page*/
+#create-listing-form {
+    padding: 20px;
+    width: 80%;
+}
+#create-listing-form input, #create-listing-form textarea {
+    margin-top: 14px;
+}
+
+
+#create-listing-form  select[name="categories"] {
+    width : 50% !important;
+}
